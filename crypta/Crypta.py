@@ -43,5 +43,3 @@ class Crypta:
                 text[i] = alpha[ord(text[i])-97]
         
         return "".join(text)
-
-print(Crypta("Salve salve galerinha").cry())
