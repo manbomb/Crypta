@@ -10,6 +10,9 @@ class Crypta:
         return self.__text
     def getCry(self):
         return self.__cry
+    def __randomCry(self):
+        alpha = list("abcdefghijklmnopqrstuvwxyz")
+        return "".join([alpha[random.randint(0, len(alpha))], alpha[random.randint(0, len(alpha))]])
     def __nextChar(self, a):
         if ord(a) < 122:
             return chr(ord(a)+1)
