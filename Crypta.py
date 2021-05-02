@@ -1,6 +1,12 @@
+import random
+
 class Crypta:
-    def __init__(self, text, cry):
+    def __init__(self, text, cry = None):
         self.__text = text.lower()
+        if (cry is None):
+            cry = self.__randomCry()
+        if (len(cry) < 2):
+            raise Exception("O argumento cry deve ter um tamanho igual a 2 caracteres.");
         self.__cry = cry[0:2].lower()
     def setText(text):
         self.__text = text
@@ -10,6 +16,9 @@ class Crypta:
         return self.__text
     def getCry(self):
         return self.__cry
+    def __randomCry(self):
+        alpha = list("abcdefghijklmnopqrstuvwxyz")
+        return "".join([alpha[random.randint(0, len(alpha))], alpha[random.randint(0, len(alpha))]])
     def __nextChar(self, a):
         if ord(a) < 122:
             return chr(ord(a)+1)
@@ -35,4 +44,4 @@ class Crypta:
         
         return "".join(text)
 
-print(Crypta("Salve salve galerinha", "sa").cry())
+print(Crypta("Salve salve galerinha").cry())
