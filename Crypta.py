@@ -44,4 +44,4 @@ class Crypta:
         
         return "".join(text)
 
-print(Crypta("Salve salve galerinha", "sa").cry())
+print(Crypta("Salve salve galerinha").cry())
